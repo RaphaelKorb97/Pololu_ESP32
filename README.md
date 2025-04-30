@@ -9,23 +9,30 @@ The project implements a network-based control system where an ESP32 acts as a b
 ## Hardware Setup
 
 ### Required Components
-- ESP32 Development Board
+- ESP32-WROOM-32 Development Board
 - Pololu 3pi+ 2040 Robot
 - Jumper Wires
+- USB Cable for programming
 
 ### Pin Connections
 The following connections are required between the ESP32 and 3pi+ 2040:
 
 | 3pi+ 2040 Pin | ESP32 Pin |
 |---------------|-----------|
-| Pin 29        | GPIO 17   |
-| Pin 28        | GPIO 18   |
+| Pin 29 (TX)   | GPIO 17   |
+| Pin 28 (RX)   | GPIO 18   |
 | GND           | GND       |
 | 3.3V          | 3.3V      |
 
 ### Connection Images
-![ESP32 Pin Connections](Pins_at_ESP32.HEIC)
-![3pi+ 2040 Pin Connections](Pins_at_pololu.HEIC)
+
+#### ESP32 Connection
+![ESP32 Pin Connections](Pins_at_ESP32%202.jpeg)
+*ESP32-WROOM-32 board with UART connections*
+
+#### Pololu 3pi+ Connection
+![3pi+ 2040 Pin Connections](Pins_at_pololu.jpeg)
+*Pololu 3pi+ 2040 board showing the connection points*
 
 ## Software Implementation
 
@@ -49,13 +56,20 @@ The system currently supports the following commands:
 
 ## Demonstration
 
-[![Project Demonstration](result.MOV)](result.MOV)
+Check out the project in action:
+
+https://github.com/RaphaelKorb97/Pololu_ESP32/raw/main/result.mp4
 
 ## Project Structure
-- `main.py`: Main ESP32 program
-- `communication.py`: Communication protocol implementation
-- `README.md`: Project documentation
-- Media files: Connection diagrams and demonstration video
+```
+Pololu_ESP32/
+├── main.py                    # Main ESP32 program
+├── communication.py           # Communication protocol implementation
+├── README.md                  # Project documentation
+├── Pins_at_ESP32 2.jpeg      # ESP32 connection photo
+├── Pins_at_pololu.jpeg       # Pololu connection photo
+└── result.mp4                # Demonstration video
+```
 
 ## Extending the Project
 The command system can be easily extended by adding new commands to the communication protocol. The current implementation serves as a foundation for more complex robot control applications.
@@ -64,7 +78,10 @@ The command system can be easily extended by adding new commands to the communic
 This project is open-source and available for educational and personal use.
 
 ## Acknowledgments
-Special thanks to Pololu for their excellent robotics platform and the ESP32 community for their support.
+Special thanks to:
+- Pololu for their excellent robotics platform
+- ESP32 community for their support
+- All contributors and testers
 
 ---
 
